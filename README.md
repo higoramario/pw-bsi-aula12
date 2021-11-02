@@ -1,3 +1,1 @@
-# angular-ivy-xyrysd
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-xyrysd)
+# Exemplo da aula 12 sobre uso de dados via Backend API no angular
