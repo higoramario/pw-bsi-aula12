@@ -18,4 +18,33 @@ export class FrutasComponent implements OnInit {
   ngOnInit() {
     this.getFrutas();
   }
+
+  adicionar(nome: string, cor: string, peso: number) {
+    this.frutaService
+      .criarFruta(nome, cor, peso)
+      .subscribe((frutaAtual) => this.frutas.push(frutaAtual));
+  }
+
+  renomear(fruta: Fruta, novoNome: string, novaCor: string, novoPeso: number) {
+    const aFruta = {
+      id: fruta.id,
+      nome: novoNome,
+      cor: novaCor,
+      peso: novoPeso,
+    };
+
+    this.frutaService.editarFruta(fruta.id, aFruta).subscribe(() => {
+      this.frutas.find((fruta) => fruta.id).nome = novoNome;
+      this.frutas.find((fruta) => fruta.id).cor = novaCor;
+      this.frutas.find((fruta) => fruta.id).peso = novoPeso;
+    });
+    this.getFrutas();
+  }
+
+  remover(fruta: Fruta) {
+    this.frutaService
+      .deletarFruta(fruta.id)
+      .subscribe(() => this.frutas.filter((umaFruta) => umaFruta !== fruta));
+    this.getFrutas();
+  }
 }

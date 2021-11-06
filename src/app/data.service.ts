@@ -14,6 +14,7 @@ export class DataService implements InMemoryDbService {
         { id: 2, nome: 'Abacaxi', cor: 'amarelo', peso: 800 },
         { id: 3, nome: 'Banana', cor: 'amarelo', peso: 100 },
         { id: 4, nome: 'Caqui', cor: 'vermelho', peso: 150 },
+        { id: 5, nome: 'Carambola', cor: 'amarelo', peso: 80 },
       ],
     };
   }

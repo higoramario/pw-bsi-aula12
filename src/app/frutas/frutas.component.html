@@ -2,3 +2,7 @@
 <ul *ngFor="let fruta of frutas">
   <li>{{fruta.nome}}</li>
 </ul>
+
+<button (click)="adicionar('Kiwi','verde',50)">Adicionar</button>
+<button (click)="renomear(frutas[2],'Banana nanica','amarelo',150)">Renomear</button>
+<button (click)="remover(frutas[4])">Remover</button>
